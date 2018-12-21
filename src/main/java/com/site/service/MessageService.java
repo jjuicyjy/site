@@ -12,6 +12,9 @@ public class MessageService {
     private MessageRepo messageRepo;
 
     public Message sendMessage(Message message){
-        return messageRepo.save(message);
+        if (message.getText() != null){
+            return messageRepo.save(message);
+        }
+        return null;
     }
 }

@@ -8,6 +8,15 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User userId;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn
+    private Photo photoId;
+
     private String text;
 
     public Message() {
