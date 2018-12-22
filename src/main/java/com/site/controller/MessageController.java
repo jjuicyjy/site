@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/message")
-public class MainController {
+public class MessageController {
 
     @Autowired
     MessageService messageService;
 
     @PostMapping("")
-    public Message greeting(@RequestBody Message message) {
+    public Message sendMessage(@RequestBody Message message) {
         return messageService.sendMessage(message);
     }
 
