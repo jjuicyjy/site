@@ -1,10 +1,12 @@
 package com.site.entity;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Message {
+public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -17,12 +19,13 @@ public class Message {
     @JoinColumn
     private Photo photoId;
 
+    @Type(type = "text")
     private String text;
 
-    public Message() {
+    public News() {
     }
 
-    public Message(long id, String text) {
+    public News(long id, String text) {
         this.id = id;
         this.text = text;
     }
@@ -47,8 +50,8 @@ public class Message {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Message message = (Message) o;
-        return Objects.equals(id, message.id);
+        News news = (News) o;
+        return Objects.equals(id, news.id);
     }
 
     @Override
@@ -58,7 +61,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return "Message{" +
+        return "News{" +
                 "text='" + text + '\'' +
                 '}';
     }

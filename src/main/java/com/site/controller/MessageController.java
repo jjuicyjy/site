@@ -1,7 +1,7 @@
 package com.site.controller;
 
-import com.site.entity.Message;
-import com.site.service.MessageService;
+import com.site.entity.News;
+import com.site.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 public class MessageController {
 
     @Autowired
-    MessageService messageService;
+    NewsService newsService;
 
     @PostMapping("")
-    public Message sendMessage(@RequestBody Message message) {
-        return messageService.sendMessage(message);
+    public News sendMessage(@RequestBody News news) {
+        return newsService.sendMessage(news);
     }
 
 }
