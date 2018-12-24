@@ -50,4 +50,8 @@ public class MessageService {
             }
         }
     }
+
+    public List<Message> getListMessage(Dialog dialog){
+        return messageRepo.findByDialogId(dialog);
+    }
 }

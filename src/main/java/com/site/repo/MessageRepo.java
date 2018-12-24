@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface MessageRepo extends JpaRepository<Message, Long> {
     List<Message> findAllByDialogIdAndIsRead(Dialog dialogId, Boolean read);
+    List<Message> findByDialogId(Dialog dialog);
 }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/messages")
 public class MessageController {
@@ -45,5 +47,10 @@ public class MessageController {
     @GetMapping("/read")
     public void readMessage(Dialog dialog){
         messageService.readMessage(dialog);
+    }
+
+    @GetMapping("/getMessages")
+    public List<Message> getMessages(Dialog dialog){
+        return messageService.getListMessage(dialog);
     }
 }

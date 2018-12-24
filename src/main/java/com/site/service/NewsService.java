@@ -5,6 +5,8 @@ import com.site.repo.NewsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class NewsService {
 
@@ -16,5 +18,9 @@ public class NewsService {
             return newsRepo.save(news);
         }
         return null;
+    }
+
+    public List<News> getListMessage(){
+        return newsRepo.findAll();
     }
 }
